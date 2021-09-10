@@ -63,3 +63,28 @@ function draw() {
     vr = vr * -1;
   }
 }
+
+class Ball {
+  constructor(x, y, w, h, vx, vy){
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.vx = vx;
+    this.vy = vy;
+  }
+
+  drawBall(){
+    ellipse(this.x,this.y,this.w,this.h);
+    this.x = x + vx;
+    this.y = y + vy;
+    
+    if(this.x <= 0 || this.x > 500) {
+      this.vx = vx * -1;
+    }
+
+    if (this.y <= 0 || this.y > 400){
+      this.vy = vy * -1;
+    }
+  }
+}
